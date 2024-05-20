@@ -10,7 +10,7 @@ on:
     paths:
       - src/**
 
-# jobs:
+jobs:
 #   lint:
 #     runs-on: ubuntu-latest
 #     name: Lint con Flake 8
