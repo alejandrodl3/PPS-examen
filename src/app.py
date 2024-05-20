@@ -31,7 +31,7 @@ app = FastAPI()
 
 @app.get('/')
 def hello():
-    return {"greeting":"Hola Mundo"}
+    return {"greeting":"Hola version-01"}
 
 @app.get('/status')
 def status():
