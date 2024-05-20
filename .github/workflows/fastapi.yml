@@ -1,4 +1,4 @@
-name: examen
+name: fastapi
 
 on:
   push:
@@ -10,19 +10,19 @@ on:
     paths:
       - src/**
 
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    name: Lint con Flake 8
-    steps:
-      - name: Check out source repository
-        uses: actions/checkout@v3
-      - name: Set up Python environment
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-      - name: flake8 Lint
-        uses: py-actions/flake8@v2
+# jobs:
+#   lint:
+#     runs-on: ubuntu-latest
+#     name: Lint con Flake 8
+#     steps:
+#       - name: Check out source repository
+#         uses: actions/checkout@v3
+#       - name: Set up Python environment
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.11"
+#       - name: flake8 Lint
+#         uses: py-actions/flake8@v2
 
   build:
     name: Docker build and push
@@ -54,7 +54,7 @@ jobs:
       with:
         host: ${{ secrets.AMZ_IP }}
         username: ${{ secrets.AMZ_USUARIO }}
-        key: ${{ secrets.+ }}
+        key: ${{ secrets.AMZ_CLAVE }}
         port: 22  # ${{ secrets.PORT }}
         script: |
             sleep 60
